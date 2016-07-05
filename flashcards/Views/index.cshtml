@@ -1,20 +1,43 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <title>flashcards</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
 
-	<style type="text/css">
-
-		body {
-			text-align: center;
-		}
-
-	</style>
-
+	<link rel="stylesheet" type="text/css" href="~/Content/css/ratchet.min.css">
+	<script type="text/javascript" src="~/Content/js/ratchet.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="~/Content/css/style.css" />
+	<title>flashcards</title>
 </head>
 <body>
-	<img src="~/Content/nancy-logo.png" alt="Nancy logo" /><br />
-	This view was rendered using the Nancy Razor view engine. Test
+	<header class="bar bar-nav">
+		<a class="icon icon-share pull-right" href="#"></a>
+		<h1 class="title">flashcards</h1>
+	</header>
+
+	<div class="bar bar-footer">
+	</div>
+
+	<div class="content">
+
+		<div class="card">
+			<ul class="table-view">
+				<li class="table-view-cell table-view-divider">Cards</li>
+				@for (int i = 0; i < 3; i++)
+				{
+					<li class="table-view-cell media">
+						<a class="navigate-right" href="/cardset/learn" data-transition="slide-in">
+							<img class="media-object pull-left" src="http://placehold.it/64x64" alt="Placeholder image">
+							<div class="media-body">
+								Card set name
+								<p>Card set description</p>
+							</div>
+						</a>
+					</li>
+				}
+
+			</ul>
+		</div>
+	</div>
 </body>
 </html>
